@@ -16,7 +16,7 @@ var x = setInterval (function() {
 
 // show the results as it counts down
 
-document.getElementsById("count").innerHTML = minutes + "m" + seconds + "s";
+// document.getElementsById("count").innerHTML = minutes + "m" + seconds + "s";
 
 // when timer reaches 0 alert quiz taker there is no more time. also show the questions that were right and the questions that were wrong.
 if( distance < 0) {
