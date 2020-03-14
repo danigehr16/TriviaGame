@@ -10,17 +10,21 @@ var indexQandA = 0;
 var correct;
 
 var VolleyballTrivaGame = [{
+    question: "What skill is used with two hands above the forehead and is normally used to set up a hitter to hit?",
+    answer:["A Pass" , "A Set" , "At Hit" , "A Dink"],
+    correct: "2",
+    // image: (place image here!)
     // questions will go here
 }]
 
-// function startGame() {
-//     console.log("the game has begun");
-//     $('.start-button').remove();
-//     correctAnswers = 0;
-//     incorrectAnswers = 0;
-//     unansweredQuestions = 0;
-//     loadQandA();
-// }
+function startGame() {
+    console.log("the game has begun");
+    $('.start-button').remove();
+    correctAnswers = 0;
+    incorrectAnswers = 0;
+    unansweredQuestions = 0;
+    loadQandA();
+}
 
 function run() {
     clearInterval(intervalId);
