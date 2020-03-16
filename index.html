@@ -21,22 +21,61 @@
     <h1>Totally That Volleyball Trivia!!!</h1>
 
     <button id="startBtn" type="button" class="btn btn-dark">START</button>
-    <button id="restartBtn" type="button" class="btn btn-light">Restart</button>
+
 
 
     <div>Your CountDown Timer!</div>
     <hr>
-    <div id="timer">
-        <h1 class='timer' data-minutes-left=3></h1>
-
-        <h1 class='timer' data-seconds-left=00></h1>
-    </div>
+    <div id="timer"> </div>
     <hr>
 
     <div class="container">
-        <div>
+        <div id="questions">
+            <form id="quiz" name="quiz">
+
+                <p>What skill is used with two hand above the forehead and is normally used to assist the hitter in a
+                    hit?</p>
+                <input id="set" type="radio" name="question1" value="A Pass"> A Pass<br>
+                <input id="set" type="radio" name="question1" value="A Set"> A Set<br>
+                <input id="set" type="radio" name="question1" value="A Hit"> A hit<br>
+                <input id="set" type="radio" name="question1" value="A Dink"> A Dink<br>
+                <hr>
+
+                <p>Who is the person with the different color jersey on the court?</p>
+                <input id="libero" type="radio" name="question2" value="Setter">Setter<br>
+                <input id="libero" type="radio" name="question2" value="Hitter"> Hitter<br>
+                <input id="libero" type="radio" name="question2" value="Defense of Specialist">Defense of Specialist<br>
+                <input id="libero" type="radio" name="question2" value="Libero">Libero<br>
+                <hr>
+
+                <p>How many setters are in a 6/2 rotation?</p>
+                <input id="two" type="radio" name="question3" value="4">4<br>
+                <input id="two" type="radio" name="question3" value="1">1<br>
+                <input id="two" type="radio" name="question3" value="6">6<br>
+                <input id="two" type="radio" name="question3" value="2">2<br>
+                <hr>
+
+
+
+                <input id="button" type="button" value="I'm finished!">
+            </form>
+
+            <div id="restartButton">
+                <button type="button" class="btn btn-dark">Restart</button>
+            </div>
+
+            <div>
+                <p id="message"></p>
+            </div>
 
         </div>
+    </div>
+
+    <div>
+        <p id="number_correct"></p>
+        <p id="incorrect_answers"></p>
+        <p id="unanswered"></p>
+
     </div>
 
 

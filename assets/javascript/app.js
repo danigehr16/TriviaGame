@@ -1,96 +1,119 @@
 
 console.log("hello")
 
-// these variables are for the questions
-var correctAnswers = 0;
-var incorrectAnswers = 0;
-var unansweredQuestions = 0;
-var indexQandA = 0;
-
 // these variables are for the timer
-
-var intervalID;
-
-// var minuets = 0
-// var seconds = 0
 var timeLeft = 10;
+var intervalId;
 
-var VolleyballTrivaGame = [{
-    question: "What skill is used with two hands above the forehead and is normally used to set up a hitter to hit?",
-    answer: ["A Pass", "A Set", "At Hit", "A Dink"],
-    correct: "1",
-    // image: (place image here!)
-    // questions will go here.. put them in html to hard code them... 
-}]
+// theses variables are for the questions.
+var correct = 0;
+var wrong = 0;
+var unanswered = 0;
+var messages = ["Great Job", "That's Just Ok", "You Really Need to Do Better"];
+var range;
+$("#question1")
+var question1 = document.quiz.question1.value;
+var question2 = document.quiz.question2.value;
+var question3 = document.quiz.question3.value;
+
+
+$(".container").hide();
 
 function startGame() {
     console.log("the game has begun");
     $('.btn').remove();
-    $("#restartBtn").hide;
-    // correctAnswers = 0;
-    // incorrectAnswers = 0;
-    // unansweredQuestions = 0;
-   
+    // $("#restartBtn").hide();
+    $(".container").show();
 
+    if (question1 == "A Set") {
+        correct++;
+        console.log(question1)
+
+    }
+
+    if (question2 == "Libero") {
+        correct++;
+        console.log(question2)
+    }
+
+    if (question3 == "2") {
+        correct++;
+        console.log(question3)
+    }
+    document.getElementById("number_correct").innerHTML = "You Got " + correct + " Correct.";
+    // document.getElementById("number_wrong").innerHTML = "You Got " + wrong + " Wrong.";
+    // document.getElementById("unanswered").innerHTML = "You Didn't Answer " + unanswered + " Questions."
 };
 
-    $("#startBtn").click(function () {
-        startGame();
 
-        $("#timer").text("00:00");
 
-        var gameTime = setInterval(function () {
-            console.log("game")
-            decrement();
-            if (timeLeft === 0) {
-                stop();
-                alert("TIME IS UP")
-                function stop() {
-                    clearInterval(setInterval)
-                    document.getElementById("timer").innerHTML = "TIME IS UP!!";
-                    run();
-                }
-                
-            };
-        }, 1000)
-        
-        console.log(timeLeft)
 
-        function run() {
-            clearInterval(intervalId);
-            intervalID = setInterval(decrement, 1000);
-            
+
+
+
+
+$("#startBtn").click(function () {
+    startGame();
+
+    $("#timer").text("10");
+
+    var gameTime = setInterval(function () {
+        console.log("game")
+        decrement();
+        if (timeLeft === 0) {
+            document.getElementById("timer").innerHTML = "TIME IS UP";
+            clearInterval(gameTime);
+            $(".container").hide();
+
+            radio("question1");
+            radio("question2");
+            radio("question3");
+
+
+
         };
-
-        function decrement() {
-            timeLeft--;
-            $("#timer").html("<h2>" + timeLeft + "</h2>");
-        };
+    }, 1000)
 
 
+    var messages = ["Great Job", "That's Just Ok", "You Really Need to Do Better"];
+    var range;
+
+    $("#button").click(function () {
+        stop("#timer");
+        $("#timer").hide();
+        if (correct < 1) {
+            range = 2;
+        }
+        if (correct > 0 && correct < 3) {
+            range = 1;
+        }
+        if (correct = 3) {
+            range = 0;
+        }
+        document.getElementById("message").innerHTML = messages[range];
+
+        radio("question1");
+        radio("question2");
+        radio("question3");
+        $(".container").hide();
         
-        //   when timer reaches 0 alert quiz taker there is no more time. also show the questions that were right and the questions that were wrong.
-        // if (distance < 0) {
-        //     clearInterval(x);
-        //     document.getElementById(".container").innerHTML = "Times Up!!!";
-        // };
+    })
 
-    });
+    function decrement() {
+        timeLeft--;
+        $("#timer").html("<h2>" + timeLeft + "</h2>");
+    };
 
+    function radio(question) {
+        var input = document.getElementsByName(question);
 
+        for (i = 0; i < input.length; i++) {
+            if (input[i].checked)
+            // return() look up more about... 
+                console.log("input: " + input[i].value)
+     
+        };
+    };
 
+});
 
-
-
-
-
-
-
-
-
-
-    // var deadline = new timer("0:03:00").getTime();
-
-    // show the results as it counts down
-
-    // document.getElementsById("count").innerHTML = minutes + "m" + seconds + "s"
