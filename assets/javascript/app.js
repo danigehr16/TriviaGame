@@ -12,45 +12,52 @@ var unanswered = 0;
 var messages = ["Great Job", "That's Just Ok", "You Really Need to Do Better"];
 var range;
 $("#question1")
+$("#question2")
+$("#question3")
 var question1 = document.quiz.question1.value;
 var question2 = document.quiz.question2.value;
 var question3 = document.quiz.question3.value;
 
 
 $(".container").hide();
+$("#count").hide();
 
 function startGame() {
     console.log("the game has begun");
     $('.btn').remove();
     // $("#restartBtn").hide();
     $(".container").show();
+    $("#count").show();
 
     if (question1 == "A Set") {
         correct++;
         console.log(question1)
 
+        ifelse(question1 === "A Set")
+        wrong++;
     }
 
     if (question2 == "Libero") {
         correct++;
         console.log(question2)
+
+        ifelse(question2 === "Libero")
+        wrong++;
     }
 
     if (question3 == "2") {
         correct++;
         console.log(question3)
+
+        ifelse(question3 === "2")
+        wrong++;
     }
+
+
     document.getElementById("number_correct").innerHTML = "You Got " + correct + " Correct.";
-    // document.getElementById("number_wrong").innerHTML = "You Got " + wrong + " Wrong.";
-    // document.getElementById("unanswered").innerHTML = "You Didn't Answer " + unanswered + " Questions."
+    document.getElementById("number_wrong").innerHTML = "You Got " + wrong + " Wrong.";
+    document.getElementById("unanswered").innerHTML = "You Didn't Answer " + unanswered + " Questions."
 };
-
-
-
-
-
-
-
 
 $("#startBtn").click(function () {
     startGame();
@@ -64,6 +71,7 @@ $("#startBtn").click(function () {
             document.getElementById("timer").innerHTML = "TIME IS UP";
             clearInterval(gameTime);
             $(".container").hide();
+            $("#count").hide();
 
             radio("question1");
             radio("question2");
@@ -96,7 +104,7 @@ $("#startBtn").click(function () {
         radio("question2");
         radio("question3");
         $(".container").hide();
-        
+
     })
 
     function decrement() {
@@ -109,9 +117,10 @@ $("#startBtn").click(function () {
 
         for (i = 0; i < input.length; i++) {
             if (input[i].checked)
-            // return() look up more about... 
-                console.log("input: " + input[i].value)
-     
+                return "input:" + input[i].value;
+            console.log("input: " + input[i].value)
+
+
         };
     };
 

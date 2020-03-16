@@ -1,3 +1,73 @@
+#background {
+    padding-left: 100;
+    
+    
+}
+
+
+#head {
+    text-align: center;
+    padding-top: 40px;
+    margin: 0px;
+    font-family: 'Lobster', cursive;
+    font-weight: bolder;
+    text-decoration: white;
+    background: bisque;
+    font-size: 70px;
+    
+
+}
+#volleyball {
+    float: right;
+    height: 350px;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+#butt {
+    align-content: center;
+    background-color: bisque;
+    border: 50px;
+    size: 30px;
+    
+}
+#count {
+    background-color: bisque;
+    padding: 40px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+#timer {
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+#startBtn {
+    padding: 10px;
+    margin: 20px;
+}
+
+#quiz {
+    background-color: bisque;
+    align-content: center;
+}
+.container {
+    background-color: black;
+}
+
+#top {
+    background-color: black;
+    padding: 50px;
+    margin: 100px;
+    padding: 40px;
+
+}
+
+
+
 #timer {
     background-color: bisque;
+    text-align: center;
 }
+ #results {
+     background: bisque;
+     align-content: center;
+ }

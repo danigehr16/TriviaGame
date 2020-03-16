@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>Volleyball Triva Game</title>
 
 <head>
     <meta charset="UTF-8">
@@ -14,73 +15,95 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Volleyball Triva Game</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Fredoka+One|Indie+Flower|Lacquer|Lobster|Luckiest+Guy|Montserrat+Subrayada|Odibee+Sans&display=swap"
+        rel="stylesheet">
 </head>
+<style>
+    body {
+        background-image: url("assets/images/volleyballback.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
 
-<body>
-    <h1>Totally That Volleyball Trivia!!!</h1>
+<div id="background">
 
-    <button id="startBtn" type="button" class="btn btn-dark">START</button>
+    <body>
 
+        <div id="top">
 
+            <h1 id="head">Totally That Volleyball Trivia!!!</h1>
+                <div id="butt">
+                    <button id="startBtn" type="button" class="btn btn-dark">START</button>
 
-    <div>Your CountDown Timer!</div>
-    <hr>
-    <div id="timer"> </div>
-    <hr>
-
-    <div class="container">
-        <div id="questions">
-            <form id="quiz" name="quiz">
-
-                <p>What skill is used with two hand above the forehead and is normally used to assist the hitter in a
-                    hit?</p>
-                <input id="set" type="radio" name="question1" value="A Pass"> A Pass<br>
-                <input id="set" type="radio" name="question1" value="A Set"> A Set<br>
-                <input id="set" type="radio" name="question1" value="A Hit"> A hit<br>
-                <input id="set" type="radio" name="question1" value="A Dink"> A Dink<br>
+                    <!-- <img id="volleyball" src="assets/images/onevball.jpg" alt="volleyball"> -->
+                </div>
                 <hr>
-
-                <p>Who is the person with the different color jersey on the court?</p>
-                <input id="libero" type="radio" name="question2" value="Setter">Setter<br>
-                <input id="libero" type="radio" name="question2" value="Hitter"> Hitter<br>
-                <input id="libero" type="radio" name="question2" value="Defense of Specialist">Defense of Specialist<br>
-                <input id="libero" type="radio" name="question2" value="Libero">Libero<br>
-                <hr>
-
-                <p>How many setters are in a 6/2 rotation?</p>
-                <input id="two" type="radio" name="question3" value="4">4<br>
-                <input id="two" type="radio" name="question3" value="1">1<br>
-                <input id="two" type="radio" name="question3" value="6">6<br>
-                <input id="two" type="radio" name="question3" value="2">2<br>
+                <span></span>
+                <div id="count">Your CountDown Timer!</div>
+                <div id="timer"> </div>
                 <hr>
 
 
+                <div class="container">
+                    <div id="questions">
+                        <form id="quiz" name="quiz">
 
-                <input id="button" type="button" value="I'm finished!">
-            </form>
+                            <p>What skill is used with two hand above the forehead and is normally used to assist the
+                                hitter in
+                                a
+                                hit?</p>
+                            <input id="set" type="radio" name="question1" value="A Pass"> A Pass<br>
+                            <input id="set" type="radio" name="question1" value="A Set"> A Set<br>
+                            <input id="set" type="radio" name="question1" value="A Hit"> A hit<br>
+                            <input id="set" type="radio" name="question1" value="A Dink"> A Dink<br>
+                            <hr>
 
-            <div id="restartButton">
-                <button type="button" class="btn btn-dark">Restart</button>
-            </div>
+                            <p>Who is the person with the different color jersey on the court?</p>
+                            <input id="libero" type="radio" name="question2" value="Setter">Setter<br>
+                            <input id="libero" type="radio" name="question2" value="Hitter"> Hitter<br>
+                            <input id="libero" type="radio" name="question2" value="Defense of Specialist">Defense of
+                            Specialist<br>
+                            <input id="libero" type="radio" name="question2" value="Libero">Libero<br>
+                            <hr>
 
-            <div>
-                <p id="message"></p>
-            </div>
+                            <p>How many setters are in a 6/2 rotation?</p>
+                            <input id="two" type="radio" name="question3" value="4">4<br>
+                            <input id="two" type="radio" name="question3" value="1">1<br>
+                            <input id="two" type="radio" name="question3" value="6">6<br>
+                            <input id="two" type="radio" name="question3" value="2">2<br>
+                            <hr>
 
+
+
+                            <input id="button" type="button" value="I'm finished!">
+                        </form>
+
+                        <div id="restartButton">
+                            <button type="button" class="btn btn-dark">Restart</button>
+                        </div>
+
+                        <div>
+                            <p id="message"></p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="results">
+                    <p id="number_correct"></p>
+                    <p id="number_wrong"></p>
+                    <p id="unanswered"></p>
+
+                </div>
         </div>
-    </div>
 
-    <div>
-        <p id="number_correct"></p>
-        <p id="incorrect_answers"></p>
-        <p id="unanswered"></p>
-
-    </div>
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
-</body>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+    </body>
+</div>
 
 </html>
