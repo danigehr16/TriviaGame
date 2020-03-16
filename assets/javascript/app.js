@@ -2,7 +2,7 @@
 console.log("hello")
 
 // these variables are for the timer
-var timeLeft = 10;
+var timeLeft = 30;
 var intervalId;
 
 // theses variables are for the questions.
@@ -21,6 +21,7 @@ var question3 = document.quiz.question3.value;
 
 $(".container").hide();
 $("#count").hide();
+$("#results").hide();
 
 function startGame() {
     console.log("the game has begun");
@@ -72,6 +73,7 @@ $("#startBtn").click(function () {
             clearInterval(gameTime);
             $(".container").hide();
             $("#count").hide();
+            $("#results").show();
 
             radio("question1");
             radio("question2");
@@ -89,6 +91,8 @@ $("#startBtn").click(function () {
     $("#button").click(function () {
         stop("#timer");
         $("#timer").hide();
+        $("#results").show();
+        $("#count").hide();
         if (correct < 1) {
             range = 2;
         }
