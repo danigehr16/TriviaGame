@@ -2,7 +2,7 @@
 console.log("hello")
 
 // these variables are for the timer
-var timeLeft = 10;
+var timeLeft = 35;
 var intervalId;
 
 // theses variables are for the questions.
@@ -11,9 +11,11 @@ var wrong = 0;
 var unanswered = 0;
 var messages = ["Great Job", "That's Just Ok", "You Really Need to Do Better"];
 var range;
-// $("#question1")
-// $("#question2")
-// $("#question3")
+$("#question1")
+$("#question2")
+$("#question3")
+$("#question4")
+$("#question5")
 
 
 $(".container").hide();
@@ -41,11 +43,14 @@ $("#startBtn").click(function () {
         if (timeLeft === 0) {
             document.getElementById("timer").innerHTML = "TIME IS UP";
             clearInterval(gameTime);
+
             var question1 = document.quiz.question1.value;
             var question2 = document.quiz.question2.value;
             var question3 = document.quiz.question3.value;
+            var question4 = document.quiz.question4.value;
+            var question5 = document.quiz.question5.value;
 
-            // debugger
+            // i cannot get the correct, wrong, and unanswered to increase. it is console logging how many correct
             if (question1 === "A Set") {
                 correct++;
             } else if (question1 === "A Set") {
@@ -63,7 +68,22 @@ $("#startBtn").click(function () {
             } else if (question3 === "2") {
                 wrong++;
             }
+            if (question4 === "A Double Touch") {
+                correct++;
+            }else if (question4 === "A Double Touch") {
+                wrong++;
+            }
+
+            if (question5 === "6") {
+                correct++;
+            }else if (question5 === "6") {
+                wrong++;
+            }
+
+            
             console.log(correct)
+            console.log(wrong)
+            console.log(unanswered)
 
             $(".container").hide();
             $("#count").hide();
@@ -72,9 +92,6 @@ $("#startBtn").click(function () {
             radio("question1");
             radio("question2");
             radio("question3");
-
-
-
         };
     }, 1000)
 
@@ -111,7 +128,19 @@ $("#startBtn").click(function () {
             wrong++;
         }
 
-        if (correct < 1) {
+        if (question4 === "A Double Touch") {
+            correct++;
+        }else if (question4 === "A Double Touch") {
+            wrong++;
+        }
+
+        if (question5 === "6") {
+            correct++;
+        }else if (question5 === "6") {
+            wrong++;
+        }
+
+        if (correct < 5) {
             range = 2;
         }
 
@@ -119,7 +148,7 @@ $("#startBtn").click(function () {
             range = 1;
         }
 
-        if (correct = 3) {
+        if (correct = 5) {
             range = 0;
         }
         
@@ -141,7 +170,7 @@ $("#startBtn").click(function () {
 
         for (i = 0; i < input.length; i++) {
             if (input[i].checked)
-                return (length)
+                return (number_correct)
 
 
 
