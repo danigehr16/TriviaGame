@@ -2,7 +2,7 @@
 console.log("hello")
 
 // these variables are for the timer
-var timeLeft = 30;
+var timeLeft = 10;
 var intervalId;
 
 // theses variables are for the questions.
@@ -11,12 +11,9 @@ var wrong = 0;
 var unanswered = 0;
 var messages = ["Great Job", "That's Just Ok", "You Really Need to Do Better"];
 var range;
-$("#question1")
-$("#question2")
-$("#question3")
-var question1 = document.quiz.question1.value;
-var question2 = document.quiz.question2.value;
-var question3 = document.quiz.question3.value;
+// $("#question1")
+// $("#question2")
+// $("#question3")
 
 
 $(".container").hide();
@@ -28,36 +25,9 @@ function startGame() {
     $('.btn').remove();
     // $("#restartBtn").hide();
     $(".container").show();
-    $("#count").show();
+    $("#count").show()
 
-    if (question1 == "A Set") {
-        correct++;
-        console.log(question1)
-
-        ifelse(question1 === "A Set")
-        wrong++;
-    }
-
-    if (question2 == "Libero") {
-        correct++;
-        console.log(question2)
-
-        ifelse(question2 === "Libero")
-        wrong++;
-    }
-
-    if (question3 == "2") {
-        correct++;
-        console.log(question3)
-
-        ifelse(question3 === "2")
-        wrong++;
-    }
-
-
-    document.getElementById("number_correct").innerHTML = "You Got " + correct + " Correct.";
-    document.getElementById("number_wrong").innerHTML = "You Got " + wrong + " Wrong.";
-    document.getElementById("unanswered").innerHTML = "You Didn't Answer " + unanswered + " Questions."
+    
 };
 
 $("#startBtn").click(function () {
@@ -71,6 +41,30 @@ $("#startBtn").click(function () {
         if (timeLeft === 0) {
             document.getElementById("timer").innerHTML = "TIME IS UP";
             clearInterval(gameTime);
+            var question1 = document.quiz.question1.value;
+            var question2 = document.quiz.question2.value;
+            var question3 = document.quiz.question3.value;
+
+            // debugger
+            if (question1 === "A Set") {
+                correct++;
+            } else if (question1 === "A Set") {
+                wrong++;
+            }
+
+            if (question2 === "Libero") {
+                correct++;
+            } else if (question2 === "Libero") {
+                wrong++;
+            }
+
+            if (question3 === "2") {
+                correct++;
+            } else if (question3 === "2") {
+                wrong++;
+            }
+            console.log(correct)
+
             $(".container").hide();
             $("#count").hide();
             $("#results").show();
@@ -93,16 +87,42 @@ $("#startBtn").click(function () {
         $("#timer").hide();
         $("#results").show();
         $("#count").hide();
+
+
+        var question1 = document.quiz.question1.value;
+        var question2 = document.quiz.question2.value;
+        var question3 = document.quiz.question3.value;
+
+        if (question1 === "A Set") {
+            correct++;
+        } else if (question1 === "A Set") {
+            wrong++;
+        }
+
+        if (question2 === "Libero") {
+            correct++;
+        } else if (question2 === "Libero") {
+            wrong++;
+        }
+
+        if (question3 === "2") {
+            correct++;
+        } else if (question3 === "2") {
+            wrong++;
+        }
+
         if (correct < 1) {
             range = 2;
         }
+
         if (correct > 0 && correct < 3) {
             range = 1;
         }
+
         if (correct = 3) {
             range = 0;
         }
-        document.getElementById("message").innerHTML = messages[range];
+        
 
         radio("question1");
         radio("question2");
@@ -121,12 +141,16 @@ $("#startBtn").click(function () {
 
         for (i = 0; i < input.length; i++) {
             if (input[i].checked)
-                return "input:" + input[i].value;
-            console.log("input: " + input[i].value)
+                return (length)
+
 
 
         };
     };
 
+    document.getElementById("message").innerHTML = messages[range];
+    document.getElementById("number_correct").innerHTML = "You Got " + correct + " Correct.";
+    document.getElementById("number_wrong").innerHTML = "You Got " + wrong + " Wrong.";
+    document.getElementById("unanswered").innerHTML = "You Didn't Answer " + unanswered + " Questions." 
 });
 
